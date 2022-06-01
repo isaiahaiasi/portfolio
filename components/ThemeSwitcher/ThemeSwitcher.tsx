@@ -1,11 +1,19 @@
-import { useThemeSwitcher } from "../../hooks/useThemeSwitcher";
+import { useContext } from "react";
+import { ThemeContext } from "./ThemeContextProvider";
 
 // TODO:
 // - Create a contextProvider for the themeSwitcher hook at the top level
 // - Avoid "flash" by injecting script?
 // - Save preference in local storage
 const ThemeSwitcher = () => {
-  const { setTheme, currentTheme, themes } = useThemeSwitcher();
+  const themeData = useContext(ThemeContext);
+
+  const currentTheme = themeData?.currentTheme ?? "light";
+  const setTheme = themeData?.setTheme ?? (() => {});
+
+  const handleChange = (e:any) => {
+    console.log(e);
+  };
 
   return (
     <div>
@@ -18,7 +26,7 @@ const ThemeSwitcher = () => {
             name="theme-select"
             value="light"
             checked={"light"===currentTheme}
-            onSelect={() => setTheme("light")}
+            onChange={() => setTheme("light")}
           />
           <label htmlFor="theme-option-light">Light</label>
         </div>
@@ -29,12 +37,12 @@ const ThemeSwitcher = () => {
             name="theme-select"
             value="dark"
             checked={"dark"===currentTheme}
-            onSelect={() => setTheme("dark")}
+            onChange={() => setTheme("dark")}
           />
           <label htmlFor="theme-option-dark">Dark</label>
         </div>
       </fieldset>
-      <p>Current theme is: {themes[themes.indexOf(currentTheme)]}. Isn&apos;t it pretty?? 😍</p>
+      <p>Current theme is: {currentTheme}. Isn&apos;t it pretty?? 😍</p>
     </div>
   );
 }

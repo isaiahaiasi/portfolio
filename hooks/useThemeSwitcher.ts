@@ -1,20 +1,15 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { ValueOf } from "../utils/utils";
 
-const themes = ["light", "dark"] as const;
-type Theme = typeof themes[number];
+// I GIVE UP!!!
+// JUST GOING TO MAKE IT TAKE AN OBJECT!!
+// AND PRETEND IT'S AN ENUM!!
+// BECAUSE TS ENUMS SUCK!!!!
 
-export function useThemeSwitcher() {
-  const [currentTheme, setCurrentTheme] = useState<Theme>(themes[0]);
+export function useThemeSwitcher<ThemeSet extends Record<string,string>>(themes: ThemeSet, initialValue:ValueOf<ThemeSet>) {
+  type Theme = ValueOf<ThemeSet>;
 
-  const setTheme = useCallback((newTheme: Theme) => {
-    if (themes.indexOf(newTheme) > -1) {
-      setCurrentTheme(newTheme);
-      return 0;
-    } else {
-      console.error(`Could not set unknown theme ${newTheme}`);
-      return 1;
-    }
-  }, [setCurrentTheme]);
+  const [currentTheme, setTheme] = useState<Theme>(initialValue);
 
   // On mount, attempt to set default theme based on system preference.
   // Only works for "dark" and "light".
@@ -22,8 +17,11 @@ export function useThemeSwitcher() {
     console.log("this isn't running every time, is it?")
     const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
     const systemDefaultTheme = darkThemeMq.matches ? "dark" : "light";
-    setTheme(systemDefaultTheme);
-  }, [setTheme]);
+
+    if (Object.values(themes).includes(systemDefaultTheme)) {
+      setTheme(systemDefaultTheme as Theme);
+    }
+  }, [themes]);
 
   // Apply data-theme property to root element/body.
   useEffect(() => {
@@ -34,6 +32,6 @@ export function useThemeSwitcher() {
   return {
     themes,
     currentTheme,
-    setTheme
+    setTheme,
   }
 }
