@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { FC } from "react";
 import Footer from "../Footer/Footer";
+import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 import UnderConstruction from "../UnderConstruction/UnderConstruction";
 import styles from './Layout.module.css';
 
@@ -19,6 +20,7 @@ const Layout:FC<Props> = ({children}) => {
       
       <div>
         <UnderConstruction/>
+        <ThemeSwitcher themes={["default", "light", "dark"]}/>
         {/* TODO: NAV */}
       </div>
       <div className={styles.contentGroup}>
