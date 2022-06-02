@@ -1,5 +1,6 @@
-import React, { createContext } from 'react'
+import React from 'react'
 import { useThemeSwitcher } from '../../hooks/useThemeSwitcher'
+import ThemeContext from './contexts/ThemeContext';
 
 // TODO: defaultTheme should be constrained by values of themes object
 interface Props {
@@ -7,10 +8,6 @@ interface Props {
   themes?: Record<string, string>;
   defaultTheme: string;
 }
-
-type ThemeContextValue = ReturnType<typeof useThemeSwitcher>;
-
-export const ThemeContext = createContext<ThemeContextValue|null>(null);
 
 const defaultThemes = {
   dark: "dark",

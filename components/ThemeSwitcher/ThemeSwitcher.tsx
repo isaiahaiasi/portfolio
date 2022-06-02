@@ -1,8 +1,7 @@
 import { useContext } from "react";
-import { ThemeContext } from "./ThemeContextProvider";
+import ThemeContext from "./contexts/ThemeContext";
 
 // TODO:
-// - Create a contextProvider for the themeSwitcher hook at the top level
 // - Avoid "flash" by injecting script?
 // - Save preference in local storage
 const ThemeSwitcher = () => {
@@ -10,10 +9,6 @@ const ThemeSwitcher = () => {
 
   const currentTheme = themeData?.currentTheme ?? "light";
   const setTheme = themeData?.setTheme ?? (() => {});
-
-  const handleChange = (e:any) => {
-    console.log(e);
-  };
 
   return (
     <div>
