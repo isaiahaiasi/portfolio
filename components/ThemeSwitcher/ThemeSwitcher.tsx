@@ -14,7 +14,7 @@ const ThemeSwitcher = () => {
 
   return (
     <div className={styles.themeSwitcher}>
-      <fieldset>
+      <fieldset style={{ borderStyle: "solid" }}>
         <legend>Select a theme:</legend>
         <div>
           <input
