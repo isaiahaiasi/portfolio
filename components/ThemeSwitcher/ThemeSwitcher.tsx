@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import ThemeContext from "./contexts/ThemeContext";
 
+import styles from "./ThemeSwitcher.module.css";
+
 // TODO:
 // - Avoid "flash" by injecting script?
 // - Save preference in local storage
@@ -11,8 +13,8 @@ const ThemeSwitcher = () => {
   const setTheme = themeData?.setTheme ?? (() => {});
 
   return (
-    <div>
-      <fieldset>
+    <div className={styles.themeSwitcher}>
+      <fieldset style={{ borderStyle: "solid" }}>
         <legend>Select a theme:</legend>
         <div>
           <input
@@ -20,7 +22,7 @@ const ThemeSwitcher = () => {
             id="theme-option-light"
             name="theme-select"
             value="light"
-            checked={"light"===currentTheme}
+            checked={"light" === currentTheme}
             onChange={() => setTheme("light")}
           />
           <label htmlFor="theme-option-light">Light</label>
@@ -31,7 +33,7 @@ const ThemeSwitcher = () => {
             id="theme-option-dark"
             name="theme-select"
             value="dark"
-            checked={"dark"===currentTheme}
+            checked={"dark" === currentTheme}
             onChange={() => setTheme("dark")}
           />
           <label htmlFor="theme-option-dark">Dark</label>
@@ -40,6 +42,6 @@ const ThemeSwitcher = () => {
       <p>Current theme is: {currentTheme}. Isn&apos;t it pretty?? 😍</p>
     </div>
   );
-}
+};
 
 export default ThemeSwitcher;

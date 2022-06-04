@@ -1,6 +1,8 @@
 :root {
-    /* Color tokens */
     /** SHOULD NOT BE REASSIGNED EVER */
+    /* Size tokens */
+    --main-content-width: 50rem;
+    /* Color tokens */
     --yellow: rgb(255, 213, 0);
     --black: rgb(0, 0, 0);
     --offblack: rgb(40, 28, 47);

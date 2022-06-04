@@ -3,10 +3,16 @@
     color: var(--black);
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 10px;
     text-align: center;
+    font-size: 1rem;
 }
 
 .container em {
     font-weight: bold;
+}
+
+.constructionIcon {
+    font-size: 1.2rem;
 }

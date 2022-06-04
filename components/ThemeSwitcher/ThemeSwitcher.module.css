@@ -1,0 +1,5 @@
+.themeSwitcher {
+    font-size: .8rem;
+    width: var(--main-content-width);
+    margin: auto;
+}

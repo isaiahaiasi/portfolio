@@ -1,0 +1,17 @@
+.mainNav {
+    font-size: 2rem;
+    margin: auto;
+    width: var(--main-content-width);
+}
+
+.navList {
+    display:flex;
+    list-style: none;
+    gap: 2rem;
+    justify-content: flex-end;
+}
+
+.navList a:hover {
+    color: var(--c-link);
+    transition: color ease .2s;
+}
