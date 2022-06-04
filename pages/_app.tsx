@@ -1,19 +1,19 @@
-import '../styles/design_tokens.css';
-import '../styles/globals.css';
+import "../styles/design_tokens.css";
+import "../styles/globals.css";
 
-import type { AppProps } from 'next/app';
+import type { AppProps } from "next/app";
 
-import Layout from '../components/Layout/Layout';
-import { ThemeContextProvider } from '../components/ThemeSwitcher/ThemeContextProvider';
+import Layout from "../components/Layout/Layout";
+import { ThemeContextProvider } from "../components/ThemeSwitcher/ThemeContextProvider";
 
 const themes = {
   light: "light",
   dark: "dark",
-}
+};
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeContextProvider defaultTheme='light' themes={themes}>
+    <ThemeContextProvider defaultTheme="dark" themes={themes}>
       <Layout>
         <Component {...pageProps} />
       </Layout>
@@ -21,4 +21,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp
+export default MyApp;

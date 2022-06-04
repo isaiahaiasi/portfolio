@@ -1,17 +1,32 @@
 .mainNav {
-    font-size: 2rem;
-    margin: auto;
-    width: var(--main-content-width);
+  font-size: 2rem;
+  font-family: var(--f-header);
+  font-weight: bold;
+  width: var(--main-content-width);
+  padding: 1rem 0;
+  z-index: 30;
 }
 
 .navList {
-    display:flex;
-    list-style: none;
-    gap: 2rem;
-    justify-content: flex-end;
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  justify-content: space-between;
 }
 
 .navList a:hover {
-    color: var(--c-link);
-    transition: color ease .2s;
+  color: var(--c-highlight);
+  transition: color ease 0.2s;
+
+  text-decoration: underline;
+  text-decoration-thickness: 0.2rem;
+  text-underline-offset: 0.37rem;
+}
+
+.navList [data-active="true"] {
+  color: var(--c-accent3);
+
+  text-decoration: underline;
+  text-decoration-thickness: 0.2rem;
+  text-underline-offset: 0.37rem;
 }

@@ -7,3 +7,15 @@
 .contentGroup {
     flex: 1;
 }
+
+.splitGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+
+.rightGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}

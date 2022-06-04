@@ -1,0 +1,6 @@
+.container {
+  display: flex;
+  position: absolute;
+  inset: 0 auto;
+  padding: 0;
+}

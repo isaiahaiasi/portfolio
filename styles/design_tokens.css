@@ -2,6 +2,7 @@
     /** SHOULD NOT BE REASSIGNED EVER */
     /* Size tokens */
     --main-content-width: 50rem;
+
     /* Color tokens */
     --yellow: rgb(255, 213, 0);
     --black: rgb(0, 0, 0);
@@ -11,17 +12,34 @@
     --blue: rgb(0, 112, 243);
     --purple: rgb(61, 31, 83);
 
+    --durple: #240d27;
+    --magenta: #DB2955;
+    --blurple: #6E44FF;
+    --greyn: #90CFD6;
+    --grhite: #F4FFF8;
+
     /* Design tokens */
     /* (Also represents "default" theme) */
     /** MAY be reassigned by THEME */
+
+    /* Colors */
+    --c-body-text: var(--grhite);
+    --c-bg-main: var(--durple);
+    --c-bg-code: var(--purple);
+    --c-link: var(--blue);
+    --c-highlight: var(--magenta);
+    --c-accent1: var(--magenta);
+    --c-accent2: var(--blurple);
+    --c-accent3: var(--greyn);
+
+    /* Fonts */
+    --f-body: 'Nunito', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    --f-header: 'IBM Plex Mono';
+}
+
+[data-theme="light"] {
     --c-body-text: var(--black);
     --c-bg-main: var(--white);
     --c-bg-code: var(--offwhite);
-    --c-link: var(--blue);
-}
-
-[data-theme="dark"] {
-    --c-body-text: var(--white);
-    --c-bg-main: var(--black);
-    --c-bg-code: var(--purple);
 }

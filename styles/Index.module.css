@@ -1,0 +1,35 @@
+/*
+This is kinda goofy,
+but position at vertical center
+ignoring other elements
+*/
+.container {
+  display: flex;
+  position: absolute;
+  inset: 0 auto;
+  padding: 0;
+}
+
+.description {
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.header {
+  font-family: var(--f-header);
+  font-size: 4rem;
+}
+
+.firstName {
+  font-weight: 500;
+}
+
+/* Spacing handled in css b/c it differs b/t Desktop and Mobile */
+.firstName::after {
+  content: " ";
+}
+
+.lastName {
+  font-weight: normal;
+  color: var(--c-accent1);
+}

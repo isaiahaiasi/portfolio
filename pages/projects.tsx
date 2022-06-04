@@ -1,8 +1,9 @@
 import { NextPage } from "next";
+import styles from "../styles/Projects.module.css";
 
 const Projects: NextPage = () => {
   return (
-    <div className="container">
+    <div className={styles.container}>
       <main className="main">
         <h1 className="title">Projects</h1>
         <div>
