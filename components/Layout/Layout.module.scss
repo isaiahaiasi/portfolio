@@ -1,0 +1,30 @@
+@use "/styles/design_tokens" as t;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.splitGroup {
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+  height: 100%;
+}
+
+.rightGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
+
+@media (max-width: t.$breakpoint-laptop-up) {
+  .splitGroup {
+    grid-template: 1fr 1fr / 1fr;
+  }
+
+  .rightGroup {
+    padding: 0 1rem;
+    justify-content: flex-end;
+  }
+}
