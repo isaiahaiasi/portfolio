@@ -12,9 +12,34 @@ const Layout: FC<Props> = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Isaiah Althouse</title>
         <meta name="description" content="Portfolio site for isaiahaiasi" />
-        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png?v=01"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png?v=01"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png?v=01"
+        />
+        <link
+          rel="mask-icon"
+          href="/safari-pinned-tab.svg?v=01"
+          color="#5bbad5"
+        />
+        <link rel="shortcut icon" href="/favicon.ico?v=01" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="msapplication-config" content="/browserconfig.xml?v=01" />
+        <meta name="theme-color" content="#ffffff" />
       </Head>
       <div className={styles.container}>
         <div className={styles.banner}>
