@@ -21,3 +21,9 @@ $magenta: #db2955;
 $blurple: #6e44ff;
 $greyn: #90cfd6;
 $grhite: #f4fff8;
+
+@mixin screen_size_max($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}

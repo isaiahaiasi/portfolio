@@ -18,7 +18,7 @@
   justify-content: right;
 }
 
-@media (max-width: t.$breakpoint-laptop-up) {
+@include t.screen_size_max(t.$breakpoint-laptop-up) {
   .splitGroup {
     grid-template: 1fr 1fr / 1fr;
   }
@@ -26,5 +26,6 @@
   .rightGroup {
     padding: 0 1rem;
     justify-content: flex-end;
+    flex-direction: column-reverse;
   }
 }

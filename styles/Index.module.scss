@@ -1,14 +1,4 @@
-/*
-This is kinda goofy,
-but position at vertical center
-ignoring other elements
-*/
-.container {
-  display: flex;
-  position: absolute;
-  inset: 0 auto;
-  padding: 0;
-}
+@use "./design_tokens.scss" as t;
 
 .description {
   line-height: 1.5;
@@ -32,4 +22,10 @@ ignoring other elements
 .lastName {
   font-weight: normal;
   color: var(--c-accent1);
+}
+
+@include t.screen_size_max(t.$breakpoint-laptop-up) {
+  .header {
+    line-height: 1.15;
+  }
 }
