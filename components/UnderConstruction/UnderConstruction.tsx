@@ -1,4 +1,4 @@
-import styles from "./UnderConstruction.module.css";
+import styles from "./UnderConstruction.module.scss";
 
 const UnderConstruction = () => {
   return (

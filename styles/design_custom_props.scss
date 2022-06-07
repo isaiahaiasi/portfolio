@@ -1,0 +1,28 @@
+@use "./design_tokens" as t;
+
+:root {
+  /* Design tokens */
+  /* (Also represents "default" theme) */
+  /** MAY be reassigned by THEME */
+
+  /* Colors */
+  --c-body-text: #{t.$grhite};
+  --c-bg-main: #{t.$durple};
+  --c-bg-code: #{t.$purple};
+  --c-link: #{t.$blue};
+  --c-highlight: #{t.$magenta};
+  --c-accent1: #{t.$magenta};
+  --c-accent2: #{t.$blurple};
+  --c-accent3: #{t.$greyn};
+
+  /* Fonts */
+  --f-body: "Nunito", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --f-header: "IBM Plex Mono";
+}
+
+[data-theme="light"] {
+  --c-body-text: #{t.$black};
+  --c-bg-main: #{t.$white};
+  --c-bg-code: #{t.$offwhite};
+}

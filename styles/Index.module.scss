@@ -1,0 +1,31 @@
+@use "./design_tokens.scss" as t;
+
+.description {
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.header {
+  font-family: var(--f-header);
+  font-size: 4rem;
+}
+
+.firstName {
+  font-weight: 500;
+}
+
+/* Spacing handled in css b/c it differs b/t Desktop and Mobile */
+.firstName::after {
+  content: " ";
+}
+
+.lastName {
+  font-weight: normal;
+  color: var(--c-accent1);
+}
+
+@include t.screen_size_max(t.$breakpoint-laptop-up) {
+  .header {
+    line-height: 1.15;
+  }
+}

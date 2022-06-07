@@ -1,6 +1,8 @@
+@use "/styles/design_tokens.scss" as t;
+
 .container {
-    background: var(--yellow);
-    color: var(--black);
+    background: #{t.$yellow};
+    color: #{t.$black};
     display: flex;
     justify-content: center;
     align-items: center;
