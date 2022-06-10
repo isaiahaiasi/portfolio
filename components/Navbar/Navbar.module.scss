@@ -14,26 +14,27 @@
   display: flex;
   list-style: none;
   justify-content: space-between;
+
+  & li[data-active="true"] a {
+    color: var(--c-accent3);
+  
+    @include t.nice_underline;
+  }
+
+  & li a:hover {
+    color: var(--c-highlight);
+
+    @include t.nice_underline;
+
+    // `transition` causes bug in Safari where underline is rendered incorrectly
+    // It doesn't look right anyway since the underline appears before color transition,
+    // So commenting out until I find a more attractive solution.
+
+    // transition: color ease 0.2s;
+  }
 }
 
-.navList a:hover {
-  color: var(--c-highlight);
-  transition: color ease 0.2s;
-
-  text-decoration: underline;
-  text-decoration-thickness: 0.2rem;
-  text-underline-offset: 0.37rem;
-}
-
-.navList [data-active="true"] {
-  color: var(--c-accent3);
-
-  text-decoration: underline;
-  text-decoration-thickness: 0.2rem;
-  text-underline-offset: 0.37rem;
-}
-
-@media (max-width: t.$breakpoint-laptop-up) {
+@include t.screen_size_max(t.$breakpoint-laptop-up) {
   .mainNav {
     padding-right: 0;
   }

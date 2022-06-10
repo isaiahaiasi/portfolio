@@ -27,3 +27,9 @@ $grhite: #f4fff8;
     @content;
   }
 }
+
+@mixin nice_underline {
+  text-decoration: underline;
+  text-decoration-thickness: 0.2rem;
+  text-underline-offset: 0.37rem;
+}
