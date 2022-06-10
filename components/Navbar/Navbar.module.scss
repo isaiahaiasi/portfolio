@@ -15,22 +15,18 @@
   list-style: none;
   justify-content: space-between;
 
-  & li[data-active="true"] a {
+  // NOTE: underline selector requirements are very specific
+  // due to issues with Safari rendering.
+  & li[data-active="true"] {
     color: var(--c-accent3);
-  
-    @include t.nice_underline;
+
+    @include t.nice_underline();
   }
 
-  & li a:hover {
+  & li:hover:not([data-active="true"]) {
     color: var(--c-highlight);
 
-    @include t.nice_underline;
-
-    // `transition` causes bug in Safari where underline is rendered incorrectly
-    // It doesn't look right anyway since the underline appears before color transition,
-    // So commenting out until I find a more attractive solution.
-
-    // transition: color ease 0.2s;
+    @include t.nice_underline();
   }
 }
 

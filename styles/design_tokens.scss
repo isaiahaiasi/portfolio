@@ -28,8 +28,21 @@ $grhite: #f4fff8;
   }
 }
 
-@mixin nice_underline {
+// TODO: For some reason, this doesn't render correctly in Safari?
+// When there are multiple valid underline states, it does a weird split-color underline...
+@mixin nice_underline($col:"") {
   text-decoration: underline;
-  text-decoration-thickness: 0.2rem;
+  @if $col != "" {
+    text-decoration-color: #{$col};
+  }
+
+  text-decoration-thickness: 4px;
   text-underline-offset: 0.37rem;
+
+  text-decoration: underline 4px solid #{$col} !important; 
+  // color: white !important;
+  -webkit-text-decoration-line:  underline !important;
+  -webkit-text-decoration-color: #{$col} !important;
+  -webkit-text-decoration-style: solid !important;
+  -webkit-text-decoration-thickness: 4px !important;
 }
