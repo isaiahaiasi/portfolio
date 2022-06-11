@@ -18,7 +18,7 @@
   justify-content: right;
 }
 
-@include t.screen_size_max(t.$breakpoint-laptop-up) {
+@include t.screen_size_upto(t.$breakpoint-laptop-min) {
   .splitGroup {
     grid-template: 1fr 1fr / 1fr;
   }

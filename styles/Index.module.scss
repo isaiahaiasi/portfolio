@@ -1,13 +1,17 @@
 @use "./design_tokens.scss" as t;
 
-.description {
+.heroTextGroup {
   line-height: 1.5;
   font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
 }
 
 .header {
   font-family: var(--f-header);
   font-size: 4rem;
+  line-height: 1.15;
 }
 
 .firstName {
@@ -22,10 +26,8 @@
 .lastName {
   font-weight: normal;
   color: var(--c-accent1);
-}
 
-@include t.screen_size_max(t.$breakpoint-laptop-up) {
-  .header {
-    line-height: 1.15;
+  @include t.screen_size_upto(t.$breakpoint-laptop-min) {
+    padding-left: 4rem;
   }
 }

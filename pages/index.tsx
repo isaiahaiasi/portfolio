@@ -4,7 +4,7 @@ import styles from "../styles/Index.module.scss";
 const Home: NextPage = () => {
   return (
     <main className="main">
-      <div className={styles.introduction}>
+      <div className={styles.heroTextGroup}>
         <p className={styles.namePreface}>Hi, I&apos;m</p>
         <h1 className={styles.header}>
           <span className={styles.firstName}>Isaiah</span>

@@ -1,8 +1,8 @@
 /* Breakpoints */
-$breakpoint-phones-only: 480px;
-$breakpoint-tablet-up: 481px;
-$breakpoint-laptop-up: 769px;
-$breakpoint-desktop-up: 1025px;
+$breakpoint-phone-max: 480px;
+$breakpoint-tablet-min: 481px;
+$breakpoint-laptop-min: 769px;
+$breakpoint-desktop-min: 1025px;
 
 /* Size tokens */
 $main-content-width: 50rem;
@@ -22,7 +22,7 @@ $blurple: #6e44ff;
 $greyn: #90cfd6;
 $grhite: #f4fff8;
 
-@mixin screen_size_max($breakpoint) {
+@mixin screen_size_upto($breakpoint) {
   @media screen and (max-width: $breakpoint) {
     @content;
   }

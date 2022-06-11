@@ -8,6 +8,10 @@
   padding: 1rem 0;
   z-index: 30;
   padding-right: 2rem;
+
+  @include t.screen_size_upto(t.$breakpoint-laptop-min) {
+    padding-right: 0;
+  }
 }
 
 .navList {
@@ -30,8 +34,3 @@
   }
 }
 
-@include t.screen_size_max(t.$breakpoint-laptop-up) {
-  .mainNav {
-    padding-right: 0;
-  }
-}
