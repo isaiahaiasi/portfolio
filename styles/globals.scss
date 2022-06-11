@@ -1,3 +1,5 @@
+@use '/styles/design_tokens' as t;
+
 /* micro reset */
 * {
   box-sizing: border-box;
@@ -51,13 +53,16 @@ a {
 }
 
 .main {
-  padding: 4rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
+
+  @include t.screen_size_upto(t.$breakpoint_laptop_min) {
+    padding: 0 .75rem;
+  }
 }
 
 .title a {

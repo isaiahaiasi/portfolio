@@ -1,0 +1,48 @@
+@use "/styles/design_tokens" as t;
+
+/*
+Desktop
+VIZ(2) NAV (1)
+VIZ(2) MAIN (3)
+VIZ(2) MAIN (3)
+VIZ(2) MAIN (3)
+
+Mobile
+VIZ (2)
+VIZ (2)
+MAIN (3)
+MAIN (3)
+NAV (1)
+*/
+
+.splitGroup {
+  display: grid;
+  grid-template: auto 1fr / 1fr 1fr;
+  height: 100%;
+
+  // Navbar
+  & :first-child {
+    grid-column-start: 2;
+  }
+
+  // 
+  & :nth-child(2) {
+    grid-row: 1 / span 2;
+  }
+}
+
+@include t.screen_size_upto(t.$breakpoint-laptop-min) {
+  .splitGroup {
+    display: grid;
+    grid-template: 1fr 1fr auto / auto;
+    
+    & :first-child {
+      grid-row: 3;
+      grid-column: 1;
+    }
+
+    & :nth-child(2) {
+      grid-row: 1;
+    }
+  }
+}

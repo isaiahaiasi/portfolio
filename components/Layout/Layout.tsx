@@ -45,13 +45,7 @@ const Layout: FC<Props> = ({ children }) => {
         <div className={styles.banner}>
           <UnderConstruction />
         </div>
-        <div className={styles.splitGroup}>
-          <div className={styles.leftGroup}>TODO</div>
-          <div className={styles.rightGroup}>
-            <Navbar />
-            {children}
-          </div>
-        </div>
+        {children}
       </div>
     </>
   );
